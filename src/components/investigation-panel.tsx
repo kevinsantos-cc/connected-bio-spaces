@@ -8,11 +8,21 @@ import { PopulationsComponent } from "./spaces/populations/populations";
 interface IProps extends IBaseProps {}
 interface IState {}
 
+const SpaceComponents: any = {
+  populations: PopulationsComponent
+};
+
 @inject("stores")
 @observer
 export class InvestigationPanelComponent extends BaseComponent<IProps, IState> {
 
   public render() {
+    const {ui} = this.stores;
+
+    // stawman code
+    const currentSpace = ui.investigationPanelSpace;
+    const SpaceComponent = SpaceComponents[currentSpace];
+
     return (
       <div className="investigation-panel">
         <div className="header">
@@ -20,7 +30,7 @@ export class InvestigationPanelComponent extends BaseComponent<IProps, IState> {
           <div className="close" onClick={this.handleClickClose}>x</div>
         </div>
         <div className="content">
-          <PopulationsComponent />
+          <SpaceComponent />
         </div>
         <div className="footer"/>
       </div>

@@ -1,9 +1,12 @@
 import { types } from "mobx-state-tree";
 
+export type Spaces = "none" | "populations";
+
 export const UIModel = types
   .model("UI", {
     showInvestigationModalSelect: false,
-    showInvestigationPanel: false
+    showInvestigationPanel: false,
+    investigationPanelSpace: "none"
   })
   .actions((self) => {
     return {
@@ -12,6 +15,10 @@ export const UIModel = types
       },
       setShowInvestigationPanel(val: boolean) {
         self.showInvestigationPanel = val;
+      },
+      // stawman code
+      setInvestigationPanelSpace(space: Spaces) {
+        self.investigationPanelSpace = space;
       }
     };
   });
