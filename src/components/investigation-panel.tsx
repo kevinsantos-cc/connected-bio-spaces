@@ -3,6 +3,7 @@ import * as React from "react";
 import { BaseComponent, IBaseProps } from "./base";
 
 import "./investigation-panel.sass";
+import { PopulationsComponent } from "./spaces/populations/populations";
 
 interface IProps extends IBaseProps {}
 interface IState {}
@@ -19,10 +20,7 @@ export class InvestigationPanelComponent extends BaseComponent<IProps, IState> {
           <div className="close" onClick={this.handleClickClose}>x</div>
         </div>
         <div className="content">
-          <iframe src="https://connected-bio.concord.org/branch/populations-model/"
-                  height="650" width="1120" scrolling="no">
-            <p>Your browser does not support iframes.</p>
-          </iframe>
+          <PopulationsComponent />
         </div>
         <div className="footer"/>
       </div>
