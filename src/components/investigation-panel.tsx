@@ -1,6 +1,7 @@
 import { inject, observer } from "mobx-react";
 import * as React from "react";
 import { BaseComponent, IBaseProps } from "./base";
+import { ChartTest } from "./charts/chart-test";
 
 import "./investigation-panel.sass";
 
@@ -12,6 +13,7 @@ interface IState {}
 export class InvestigationPanelComponent extends BaseComponent<IProps, IState> {
 
   public render() {
+    const showChart = true;
     return (
       <div className="investigation-panel">
         <div className="header">
@@ -19,10 +21,18 @@ export class InvestigationPanelComponent extends BaseComponent<IProps, IState> {
           <div className="close" onClick={this.handleClickClose}>x</div>
         </div>
         <div className="content">
-          <iframe src="https://connected-bio.concord.org/branch/populations-model/"
-                  height="650" width="1120" scrolling="no">
-            <p>Your browser does not support iframes.</p>
-          </iframe>
+          {showChart &&
+            <div>
+              <ChartTest />
+            </div>
+          }
+          {!showChart &&
+            <iframe src="https://connected-bio.concord.org/branch/populations-model/"
+              height="650" width="1120" scrolling="no">
+              <p>Your browser does not support iframes.</p>
+            </iframe>
+          }
+
         </div>
         <div className="footer"/>
       </div>

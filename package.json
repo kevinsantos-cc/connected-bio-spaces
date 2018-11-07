@@ -101,6 +101,8 @@
     "webpack-dev-server": "^3.1.9"
   },
   "dependencies": {
+    "@types/chart.js": "^2.7.40",
+    "chart.js": "^2.7.3",
     "immutable": "^3.8.2",
     "lodash": "^4.17.11",
     "mobx": "^5.5.0",
@@ -108,6 +110,7 @@
     "mobx-state-tree": "^3.4.0",
     "query-string": "^6.1.0",
     "react": "^16.5.0",
+    "react-chartjs-2": "^2.7.4",
     "react-dom": "^16.5.0",
     "uuid": "^3.3.2",
     "wait-on": "^3.0.1"
