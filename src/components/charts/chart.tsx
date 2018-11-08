@@ -21,7 +21,6 @@ export class Chart extends React.Component<ChartProps, ChartState> {
 
   public render() {
     const { chartType, chartData } = this.props;
-    console.log(chartType);
     return (
       <div className="chart-container">
         <div className="chart-display">

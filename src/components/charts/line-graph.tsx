@@ -65,7 +65,7 @@ export class LineGraph extends React.Component<LineProps, LineState> {
       minA2: chartData.minA2 || 0,
       maxA1: chartData.maxA1 || 100,
       maxA2: chartData.maxA2 || 100
-    }
+    };
     const options: any = Object.assign({}, kDefaultOptions, {
       scales: {
         display: false,
